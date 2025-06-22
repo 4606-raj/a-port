@@ -1,0 +1,41 @@
+{
+  "name": "a-port",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint .",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.0",
+    "@mui/material": "^7.0.2",
+    "@mui/x-data-grid": "^8.0.0",
+    "@mui/x-date-pickers": "^8.1.0",
+    "@vitejs/plugin-react": "^4.5.2",
+    "dayjs": "^1.11.11",
+    "echarts": "^5.5.0",
+    "echarts-for-react": "^3.0.2",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^6.23.1",
+    "resize-observer-polyfill": "^1.5.1",
+    "swiper": "^11.2.8",
+    "vite-plugin-checker": "^0.6.4"
+  },
+  "devDependencies": {
+    "@iconify/react": "^5.0.1",
+    "@vitejs/plugin-react-swc": "^3.5.0",
+    "eslint": "^8.57.0",
+    "eslint-config-prettier": "^9.1.0",
+    "eslint-plugin-prettier": "^5.1.3",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "eslint-plugin-react-refresh": "^0.4.6",
+    "gh-pages": "^6.1.1",
+    "prettier": "^3.3.2",
+    "vite": "^6.3.5"
+  }
+}
