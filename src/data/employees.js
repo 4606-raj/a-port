@@ -9,7 +9,7 @@ import {
   Avatar8,
 } from '@/data/images';
 
-export const mentors = [
+export const employees = [
   {
     id: 1,
     name: 'Curious George',
@@ -18,7 +18,7 @@ export const mentors = [
     task: 40,
     rating: 4.7,
     review: 750,
-    followed: false,
+    onboarded: false,
   },
   {
     id: 2,
@@ -28,7 +28,7 @@ export const mentors = [
     task: 32,
     rating: 4.9,
     review: 510,
-    followed: true,
+    onboarded: true,
   },
   {
     id: 3,
@@ -38,7 +38,7 @@ export const mentors = [
     task: 60,
     rating: 4.9,
     review: 970,
-    followed: false,
+    onboarded: false,
   },
   {
     id: 4,
@@ -48,7 +48,7 @@ export const mentors = [
     task: 60,
     rating: 4.7,
     review: 730,
-    followed: false,
+    onboarded: false,
   },
   {
     id: 5,
@@ -58,7 +58,7 @@ export const mentors = [
     task: 28,
     rating: 4.8,
     review: 370,
-    followed: true,
+    onboarded: true,
   },
   {
     id: 6,
@@ -68,7 +68,7 @@ export const mentors = [
     task: 60,
     rating: 4.8,
     review: 870,
-    followed: false,
+    onboarded: false,
   },
   {
     id: 7,
@@ -78,7 +78,7 @@ export const mentors = [
     task: 40,
     rating: 4.7,
     review: 750,
-    followed: false,
+    onboarded: false,
   },
   {
     id: 8,
@@ -88,6 +88,6 @@ export const mentors = [
     task: 60,
     rating: 4.9,
     review: 910,
-    followed: true,
+    onboarded: true,
   },
 ];

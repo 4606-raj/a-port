@@ -6,7 +6,7 @@ import RunningTask from '@/components/sections/dashboard/running-task';
 import UpcomingTask from '@/components/sections/dashboard/upcoming-task';
 import WeekCalendar from '@/components/sections/dashboard/week-calendar';
 import TaskOverview from '@/components/sections/dashboard/task-overview';
-import Employees from '@/components/ui-elements/employees';
+import MonthlyMentors from '@/components/sections/dashboard/monthly-mentors';
 import Footer from '@/components/common/Footer';
 
 const Dashboard = () => {
@@ -22,7 +22,7 @@ const Dashboard = () => {
           <Activity />
         </Stack>
 
-        <Employees />
+        <MonthlyMentors />
         <UpcomingTask />
         <TaskOverview />
 

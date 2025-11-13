@@ -9,7 +9,6 @@ import InputAdornment from '@mui/material/InputAdornment';
 import IconifyIcon from '@/components/base/IconifyIcon';
 import Image from '@/components/base/Image';
 import LogoImg from '@/assets/images/Logo.png';
-import LanguageSelect from './LanguageSelect';
 import ProfileMenu from './ProfileMenu';
 
 const Topbar = ({ isClosing, mobileOpen, setMobileOpen }) => {
@@ -73,7 +72,6 @@ const Topbar = ({ isClosing, mobileOpen, setMobileOpen }) => {
       </Stack>
 
       <Stack spacing={{ xs: 1, sm: 2 }} alignItems="center">
-        <LanguageSelect />
         <IconButton size="large">
           <Badge color="error" variant="dot">
             <IconifyIcon icon="solar:bell-outline" />

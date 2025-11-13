@@ -13,10 +13,7 @@ const Footer = () => {
       letterSpacing={0.5}
       fontWeight={500}
     >
-      Made with ❤️ by{' '}
-      <Link href="https://themewagon.com/" target="_blank" rel="noreferrer">
-        {'ThemeWagon'}
-      </Link>
+    Copyright © 2025 Anviam. All rights reserved.
     </Typography>
   );
 };
