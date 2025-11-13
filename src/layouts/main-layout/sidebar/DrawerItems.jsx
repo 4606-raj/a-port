@@ -24,9 +24,9 @@ const DrawerItems = () => {
         zIndex={1000}
       >
         <ButtonBase component={Link} href="/" disableRipple>
-          <Image src={LogoImg} alt="logo" height={40} width={40} sx={{ mr: 1.25 }} />
+          {/* <Image src={LogoImg} alt="logo" height={40} width={40} sx={{ mr: 1.25 }} /> */}
           <Typography variant="h3" color="text.primary" letterSpacing={1}>
-            DNX
+            ANVIAM
           </Typography>
         </ButtonBase>
       </Stack>

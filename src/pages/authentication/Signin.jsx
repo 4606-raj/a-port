@@ -31,31 +31,10 @@ const Signin = () => {
         Sign In
       </Typography>
       <Typography mt={1.5} align="center" variant="body2">
-        Welcome back! Let's continue with,
+        Welcome back! Let's continue,
       </Typography>
 
-      <Stack mt={3} spacing={1.75} width={1}>
-        <Button
-          variant="contained"
-          color="secondary"
-          fullWidth
-          startIcon={<IconifyIcon icon="logos:google-icon" />}
-          sx={{ bgcolor: 'info.main', '&:hover': { bgcolor: 'info.main' } }}
-        >
-          Google
-        </Button>
-        <Button
-          variant="contained"
-          color="secondary"
-          fullWidth
-          startIcon={<IconifyIcon icon="logos:apple" sx={{ mb: 0.5 }} />}
-          sx={{ bgcolor: 'info.main', '&:hover': { bgcolor: 'info.main' } }}
-        >
-          Apple
-        </Button>
-      </Stack>
-
-      <Divider sx={{ my: 4 }}>or Signin with</Divider>
+      <Divider sx={{ my: 4 }}>Signin with</Divider>
 
       <Stack component="form" mt={3} onSubmit={handleSubmit} direction="column" gap={2}>
         <TextField
@@ -134,10 +113,6 @@ const Signin = () => {
           Sign In
         </Button>
       </Stack>
-
-      <Typography mt={5} variant="body2" color="text.secondary" align="center" letterSpacing={0.25}>
-        Don't have an account? <Link href={paths.signup}>Signup</Link>
-      </Typography>
     </>
   );
 };
