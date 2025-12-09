@@ -25,17 +25,17 @@ const RunningTask = () => {
       bgcolor="primary.dark"
     >
       <Box width={1} maxWidth={130}>
-        <Typography variant="subtitle1" fontWeight={600} color="info.lighter">
+        <Typography variant="subtitle1" fontWeight={600} color="text.stableLight">
           Running Task
         </Typography>
-        <Typography variant="h3" fontWeight={600} color="info.lighter" mt={2.5}>
+        <Typography variant="h3" fontWeight={600} color="text.stableLight" mt={2.5}>
           65
         </Typography>
       </Box>
       <Stack spacing={2} alignItems="center" width={1}>
         <RunningTaskChart data={chartData} sx={{ width: 76, height: '76px !important' }} />
         <Box>
-          <Typography variant="h5" fontWeight={600} color="info.lighter">
+          <Typography variant="h5" fontWeight={600} color="text.stableLight">
             100
           </Typography>
           <Typography variant="subtitle2" color="text.disabled" mt={0.5}>

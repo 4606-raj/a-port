@@ -14,7 +14,7 @@ const RunningTaskChart = ({ data, ...rest }) => {
   const option = useMemo(
     () => ({
       tooltip: {
-        backgroundColor: theme.palette.info.lighter,
+        backgroundColor: theme.palette.text.stableLighter,
         padding: [8, 10, 8, 10],
         borderRadius: 10,
         borderWidth: 0,
@@ -72,7 +72,7 @@ const RunningTaskChart = ({ data, ...rest }) => {
           detail: {
             fontSize: 18,
             fontWeight: 500,
-            color: theme.palette.info.light,
+            color: theme.palette.text.stableLight,
             fontFamily: theme.typography.fontFamily,
             formatter: '{value}%',
           },

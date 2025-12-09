@@ -10,6 +10,8 @@ import IconifyIcon from '@/components/base/IconifyIcon';
 import Image from '@/components/base/Image';
 import LogoImg from '@/assets/images/Logo.png';
 import ProfileMenu from './ProfileMenu';
+import ThemeToggle from "@/components/base/ThemeToggle";
+import { useState } from 'react';
 
 const Topbar = ({ isClosing, mobileOpen, setMobileOpen }) => {
   const handleDrawerToggle = () => {
@@ -17,6 +19,13 @@ const Topbar = ({ isClosing, mobileOpen, setMobileOpen }) => {
       setMobileOpen(!mobileOpen);
     }
   };
+
+  const [mode, setMode] = useState("light");
+
+  const toggleMode = () => {
+    setMode((prev) => (prev === "light" ? "dark" : "light"));
+  };
+
 
   return (
     <Stack
@@ -77,6 +86,9 @@ const Topbar = ({ isClosing, mobileOpen, setMobileOpen }) => {
             <IconifyIcon icon="solar:bell-outline" />
           </Badge>
         </IconButton>
+
+        <ThemeToggle mode={mode} toggleMode={toggleMode} />
+        
         <ProfileMenu />
       </Stack>
     </Stack>
