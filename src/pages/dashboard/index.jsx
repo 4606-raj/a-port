@@ -3,9 +3,9 @@ import Stack from '@mui/material/Stack';
 import Activity from '@/components/sections/dashboard/activity';
 import TaskToday from '@/components/sections/dashboard/task-today';
 import RunningTask from '@/components/sections/dashboard/running-task';
-import UpcomingTask from '@/components/sections/dashboard/upcoming-task';
+import Projects from '@/components/ui-elements/projects';
 import WeekCalendar from '@/components/sections/dashboard/week-calendar';
-import TaskOverview from '@/components/sections/dashboard/task-overview';
+import TaskTable from '@/components/ui-elements/tasks';
 import Employees from '@/components/ui-elements/employees';
 import Footer from '@/components/common/Footer';
 
@@ -23,8 +23,8 @@ const Dashboard = () => {
         </Stack>
 
         <Employees />
-        <UpcomingTask />
-        <TaskOverview />
+        <Projects />
+        <TaskTable />
 
         <Box display={{ xs: 'none', md: 'block' }}>
           <Footer />

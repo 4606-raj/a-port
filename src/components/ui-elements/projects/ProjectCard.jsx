@@ -9,7 +9,7 @@ import CardContent from '@mui/material/CardContent';
 import AvatarGroup from '@mui/material/AvatarGroup';
 import IconifyIcon from '@/components/base/IconifyIcon';
 
-const TaskCard = ({ data }) => {
+const ProjectCard = ({ data }) => {
   return (
     <Card sx={{ userSelect: 'none' }}>
       <CardMedia component="img" height="110" image={data.thumb} alt="task_today_image" />
@@ -60,4 +60,4 @@ const TaskCard = ({ data }) => {
   );
 };
 
-export default TaskCard;
+export default ProjectCard;

@@ -5,9 +5,9 @@ import TextField from '@mui/material/TextField';
 import Typography from '@mui/material/Typography';
 import InputAdornment from '@mui/material/InputAdornment';
 import IconifyIcon from '@/components/base/IconifyIcon';
-import TaskOverviewTable from './TaskOverviewTable';
+import TaskTable from './TaskTable';
 
-const TaskOverview = () => {
+const Task = () => {
   const [searchText, setSearchText] = useState('');
 
   const handleInputChange = (e) => {
@@ -18,7 +18,7 @@ const TaskOverview = () => {
     <Stack direction="column" spacing={1} width={1}>
       <Stack alignItems="center" justifyContent="space-between">
         <Typography variant="h4" minWidth={200}>
-          Task Overview
+          Tasks List
         </Typography>
         <TextField
           variant="filled"
@@ -38,10 +38,10 @@ const TaskOverview = () => {
       </Stack>
 
       <Paper sx={{ mt: 1.5, p: 0, pb: 0.75, minHeight: 411, width: 1 }}>
-        <TaskOverviewTable searchText={searchText} />
+        <TaskTable searchText={searchText} />
       </Paper>
     </Stack>
   );
 };
 
-export default TaskOverview;
+export default Task;

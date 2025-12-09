@@ -7,7 +7,7 @@ import AvatarGroup from '@mui/material/AvatarGroup';
 import LinearProgress from '@mui/material/LinearProgress';
 import { DataGrid, useGridApiRef } from '@mui/x-data-grid';
 import DataGridFooter from '@/components/common/DataGridFooter';
-import { rows } from '@/data/taskOverview';
+import { rows } from '@/data/tasks';
 import ActionMenu from './ActionMenu';
 
 const columns = [
