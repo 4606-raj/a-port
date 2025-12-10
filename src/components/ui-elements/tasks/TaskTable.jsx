@@ -75,11 +75,11 @@ const columns = [
     renderCell: (params) => {
       const color =
         params.value === 'in progress'
-          ? 'primary'
+          ? 'warning'
           : params.value === 'completed'
             ? 'success'
             : params.value === 'pending'
-              ? 'warning'
+              ? 'error'
               : 'info';
       return (
         <Stack direction="column" alignItems="center" justifyContent="center" height={1}>

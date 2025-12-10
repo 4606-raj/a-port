@@ -45,6 +45,7 @@ const RunningTaskChart = ({ data, ...rest }) => {
             clip: false,
             itemStyle: {
               borderWidth: 0,
+              color: theme.palette.primary.main
             },
           },
           axisLine: {

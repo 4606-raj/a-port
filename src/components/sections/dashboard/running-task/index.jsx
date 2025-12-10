@@ -25,7 +25,7 @@ const RunningTask = () => {
       bgcolor="primary.dark"
     >
       <Box width={1} maxWidth={130}>
-        <Typography variant="subtitle1" fontWeight={600} color="text.stableLight">
+        <Typography variant="subtitle" fontWeight={600} color="text.stableLight">
           Running Task
         </Typography>
         <Typography variant="h3" fontWeight={600} color="text.stableLight" mt={2.5}>
@@ -38,7 +38,7 @@ const RunningTask = () => {
           <Typography variant="h5" fontWeight={600} color="text.stableLight">
             100
           </Typography>
-          <Typography variant="subtitle2" color="text.disabled" mt={0.5}>
+          <Typography variant="subtitle2" color="text.stableLight" mt={0.5}>
             Task
           </Typography>
         </Box>

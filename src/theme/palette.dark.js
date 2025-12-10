@@ -32,19 +32,19 @@ const darkPalette = {
 
   success: {
     light: green[300],
-    main: green[400],
+    main: white[100],
     dark: green[700],
   },
 
   warning: {
-    light: yellow[300],
-    main: yellow[400],
-    dark: yellow[700],
+    light: yellow[100],
+    main: yellow[700],
+    dark: yellow[900],
   },
 
   error: {
-    light: red[300],
-    main: red[400],
+    light: red[200],
+    main: red[300],
     dark: red[700],
   },
 
@@ -52,6 +52,8 @@ const darkPalette = {
     primary: white[100],
     secondary: white[100],
     disabled: darkGray[400],
+    stableLight: white[300],
+    stableDark: darkGray[500],
   },
 
   background: {

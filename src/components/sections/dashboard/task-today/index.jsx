@@ -94,7 +94,7 @@ const TaskToday = () => {
         <Divider />
 
         <Stack alignItems="center" justifyContent="space-between">
-          <Typography variant="subtitle1" color="primary.dark" fontWeight={700}>
+          <Typography variant="subtitle1" color="primary" fontWeight={700}>
             Detail Task
           </Typography>
           <Typography variant="subtitle2" color="text.secondary">

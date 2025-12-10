@@ -1,4 +1,4 @@
-import { useMemo, useState, createContext, useContext } from "react";
+import { useMemo, useState, useEffect, createContext, useContext } from "react";
 import { ThemeProvider, CssBaseline } from "@mui/material";
 import { lightTheme, darkTheme } from "./theme-mod";
 
@@ -9,15 +9,22 @@ export function useThemeMode() {
 }
 
 export default function AppThemeProvider({ children }) {
-  const [mode, setMode] = useState("light");
+
+  const [mode, setMode] = useState(() => {
+    return localStorage.getItem("themeMode") || "light";
+  });
+
+  useEffect(() => {
+    localStorage.setItem("themeMode", mode);
+  }, [mode]);
 
   const theme = useMemo(
-    // () => (mode === "light" ? darkTheme : lightTheme),
     () => (mode === "light" ? lightTheme : darkTheme),
     [mode]
   );
 
-  const toggle = () => setMode(m => (m === "light" ? "dark" : "light"));
+  const toggle = () =>
+    setMode((m) => (m === "light" ? "dark" : "light"));
 
   return (
     <ThemeModeContext.Provider value={{ mode, toggle }}>

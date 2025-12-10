@@ -41,7 +41,7 @@ const ActivityChart = ({ data, ...rest }) => {
             backgroundColor: theme.palette.info.light,
           },
         },
-        backgroundColor: theme.palette.primary.dark,
+        backgroundColor: theme.palette.primary.main,
         padding: [10, 18, 10, 18],
         borderRadius: 10,
         borderWidth: 0,
@@ -77,7 +77,7 @@ const ActivityChart = ({ data, ...rest }) => {
             const arrowPosition = isTopOffset ? 'bottom:-14px;' : 'top:-14px;';
             return `<div style="position:relative; border-radius:10px;">
               <p style="font-size:${theme.typography.body2.fontSize}; font-weight:500">${dataValue} Task</p>
-              <span style="position:absolute; ${arrowPosition} left:50%; transform:translate(-50%) rotate(45deg); width:12px; height:12px; background:${theme.palette.primary.dark}; border-top:none; border-left:none; border-right:none; border-bottom:none; z-index:-10000;"></span>
+              <span style="position:absolute; ${arrowPosition} left:50%; transform:translate(-50%) rotate(45deg); width:12px; height:12px; background:${theme.palette.primary.main}; border-top:none; border-left:none; border-right:none; border-bottom:none; z-index:-10000;"></span>
             </div>`;
           }
           return '';
