@@ -17,6 +17,8 @@ const Dashboard = lazy(() => import('@/pages/dashboard'));
 const OldDashboard = lazy(() => import('@/pages/dashboard/index-old'));
 const Signin = lazy(() => import('@/pages/authentication/Signin'));
 const Signup = lazy(() => import('@/pages/authentication/Signup'));
+const ForgotPassword = lazy(() => import('@/pages/authentication/ForgotPassword'));
+const ResetPassword = lazy(() => import('@/pages/authentication/ResetPassword'));
 
 const router = createBrowserRouter(
   [
@@ -109,6 +111,14 @@ const router = createBrowserRouter(
             {
               path: paths.signup,
               element: <Signup />,
+            },
+            {
+              path: paths.forgotPassword,
+              element: <ForgotPassword />,
+            },
+            {
+              path: paths.resetPassword,
+              element: <ResetPassword />,
             },
           ],
         },

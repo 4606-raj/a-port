@@ -1,76 +1,47 @@
-import { useState, ChangeEvent, FormEvent } from 'react';
-import Link from '@mui/material/Link';
+import { useState } from 'react';
 import Stack from '@mui/material/Stack';
 import Button from '@mui/material/Button';
-import Divider from '@mui/material/Divider';
 import InputAdornment from '@mui/material/InputAdornment';
-import FormControlLabel from '@mui/material/FormControlLabel';
 import Typography from '@mui/material/Typography';
 import IconButton from '@mui/material/IconButton';
 import TextField from '@mui/material/TextField';
-import Checkbox from '@mui/material/Checkbox';
 import IconifyIcon from '@/components/base/IconifyIcon';
-import paths from '@/routes/paths';
 import { useDispatch } from 'react-redux';
-import { login } from '@/store/slices/auth.slice.js';
+import { resetPassword } from '@/store/slices/auth.slice';
 
-const Signin = () => {
-  const [user, setUser] = useState({ email: '', password: '' });
+const ResetPassword = () => {
   const [showPassword, setShowPassword] = useState(false);
+  const [password, setPassword] = useState('');
+  const [password_confirmation, setPasswordConfirmation] = useState('');
 
-    const dispatch = useDispatch();
+  const token = new URLSearchParams(window.location.search).get('token');
+  const email = new URLSearchParams(window.location.search).get('email');
+
+  const dispatch = useDispatch();
 
   const handleInputChange = (e) => {
-    setUser({ ...user, [e.target.name]: e.target.value });
   };
-
+  
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(user);
-
-    // Dispatch sign-in action
-    dispatch(login({ email: user.email, password: user.password, redirectTo: paths.dashboard.root }));
-    
+    dispatch(resetPassword({ token, email, password, password_confirmation }));
   };
 
   return (
     <>
       <Typography align="center" variant="h4">
-        Sign In
+        Reset Password
       </Typography>
       <Typography mt={1.5} align="center" variant="body2">
-        Welcome back! Let's continue,
+        Enter your new password below to reset your account password.
       </Typography>
 
-      <Divider sx={{ my: 4 }}>Signin with</Divider>
-
       <Stack component="form" mt={3} onSubmit={handleSubmit} direction="column" gap={2}>
-        <TextField
-          id="email"
-          name="email"
-          type="email"
-          value={user.email}
-          onChange={handleInputChange}
-          variant="filled"
-          placeholder="Your Email"
-          autoComplete="email"
-          fullWidth
-          autoFocus
-          required
-          InputProps={{
-            startAdornment: (
-              <InputAdornment position="start">
-                <IconifyIcon icon="hugeicons:mail-at-sign-02" />
-              </InputAdornment>
-            ),
-          }}
-        />
         <TextField
           id="password"
           name="password"
           type={showPassword ? 'text' : 'password'}
-          value={user.password}
-          onChange={handleInputChange}
+          onChange={(e) => setPassword(e.target.value)}
           variant="filled"
           placeholder="Your Password"
           autoComplete="current-password"
@@ -86,8 +57,8 @@ const Signin = () => {
               <InputAdornment
                 position="end"
                 sx={{
-                  opacity: user.password ? 1 : 0,
-                  pointerEvents: user.password ? 'auto' : 'none',
+                  opacity: password ? 1 : 0,
+                  pointerEvents: password ? 'auto' : 'none',
                 }}
               >
                 <IconButton
@@ -106,23 +77,25 @@ const Signin = () => {
           }}
         />
 
-        <Stack mt={-2} alignItems="center" justifyContent="space-between">
-          <FormControlLabel
-            control={<Checkbox id="checkbox" name="checkbox" size="small" color="primary" />}
-            label="Remember me"
-            sx={{ ml: -1 }}
-          />
-          <Link href={paths.forgotPassword} fontSize="body2.fontSize">
-            Forgot password?
-          </Link>
-        </Stack>
+
+        <TextField
+          id="password-confirm"
+          name="password_confirmation"
+          type={showPassword ? 'text' : 'password'}
+          onChange={(e) => setPasswordConfirmation(e.target.value)}
+          variant="filled"
+          placeholder="Your Password"
+          autoComplete="current-password"
+          fullWidth
+          required
+        />
 
         <Button type="submit" variant="contained" size="medium" fullWidth>
-          Sign In
+          Save
         </Button>
       </Stack>
     </>
   );
 };
 
-export default Signin;
+export default ResetPassword;

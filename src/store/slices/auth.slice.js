@@ -1,5 +1,6 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
-import * as authApi from "@/api/auth.api";
+import API from "@/constants/api-urls";
+import axios from "@/api/axios.js";
 
 /**
  * Async Actions
@@ -8,9 +9,33 @@ export const login = createAsyncThunk(
   "auth/login",
   async (payload, { rejectWithValue }) => {
     try {
-      const { data } = await authApi.login(payload);
+      const { data } = await axios.post(API.AUTH.LOGIN, payload);
       localStorage.setItem("token", data.token);
       return data.user;
+    } catch (err) {
+      return rejectWithValue(err.response?.data?.message || "Login failed");
+    }
+  }
+);
+
+export const forgotPassword = createAsyncThunk(
+  "auth/forgot-password",
+  async (payload, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post(API.AUTH.FORGOT_PASSWORD, payload);
+      return data;
+    } catch (err) {
+      return rejectWithValue(err.response?.data?.message || "Login failed");
+    }
+  }
+);
+
+export const resetPassword = createAsyncThunk(
+  "auth/reset-password",
+  async (payload, { rejectWithValue }) => {
+    try {
+      const { data } = await axios.post(API.AUTH.RESET_PASSWORD, payload);
+      return data;
     } catch (err) {
       return rejectWithValue(err.response?.data?.message || "Login failed");
     }
@@ -21,7 +46,7 @@ export const fetchMe = createAsyncThunk(
   "auth/me",
   async (_, { rejectWithValue }) => {
     try {
-      const { data } = await authApi.me();
+      const { data } = await axios.get("/auth/me");
       return data;
     } catch {
       return rejectWithValue("Session expired");
@@ -29,8 +54,8 @@ export const fetchMe = createAsyncThunk(
   }
 );
 
-export const logout = createAsyncThunk("auth/logout", async () => {
-  await authApi.logout();
+export const logout = createAsyncThunk("/auth/logout", async () => {
+  await axios.post("/auth/logout");
   localStorage.removeItem("token");
 });
 
@@ -64,6 +89,19 @@ const authSlice = createSlice({
         state.isAuthenticated = true;
       })
       .addCase(login.rejected, (state, action) => {
+        state.loading = false;
+        state.error = action.payload;
+      })
+
+      // forgot PASSWORD
+      .addCase(forgotPassword.pending, (state) => {
+        state.loading = true;
+        state.error = null;
+      })
+      .addCase(forgotPassword.fulfilled, (state) => {
+        state.loading = false;
+      })
+      .addCase(forgotPassword.rejected, (state, action) => {
         state.loading = false;
         state.error = action.payload;
       })
