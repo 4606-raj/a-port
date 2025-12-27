@@ -5,6 +5,7 @@ import MainLayout from '@/layouts/main-layout';
 import AuthLayout from '@/layouts/auth-layout';
 import Splash from '@/components/loader/Splash';
 import PageLoader from '@/components/loader/PageLoader';
+import { Profile, Employees } from '../pages/employee';
 
 const App = lazy(() => import('@/App'));
 const Dashboard = lazy(() => import('@/pages/dashboard'));
@@ -34,6 +35,16 @@ const router = createBrowserRouter(
             {
               index: true,
               element: <Dashboard />,
+            },
+            {
+              path: 'employee/:id',
+              index: true,
+              element: <Profile />,
+            },
+            {
+              path: 'employees',
+              index: true,
+              element: <Employees />,
             },
           ],
         },

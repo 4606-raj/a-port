@@ -16,7 +16,7 @@ const EmployeeCard = ({ data }) => {
           <Avatar
             src={data.avatar}
             component={Link}
-            href="#!"
+            href="/employee/1"
             sx={{
               height: 48,
               width: 48,
@@ -26,7 +26,7 @@ const EmployeeCard = ({ data }) => {
           <CardContent>
             <Typography
               component={Link}
-              href="#!"
+              href="/employee/1"
               variant="subtitle1"
               color="text.primary"
               fontWeight={600}

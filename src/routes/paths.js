@@ -8,7 +8,7 @@ export const rootPaths = {
 export default {
   dashboard: `/${rootPaths.pageRoot}/dashboard`,
   task: `/${rootPaths.pageRoot}/task`,
-  mentors: `/${rootPaths.pageRoot}/mentors`,
+  employees: `/${rootPaths.pageRoot}/employees`,
   messages: `/${rootPaths.pageRoot}/messages`,
   settings: `/${rootPaths.pageRoot}/settings`,
 

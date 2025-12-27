@@ -9,16 +9,17 @@ const sitemap = [
     active: true,
   },
   {
+    id: 'employees',
+    subheader: 'Employees',
+    path: 'employees',
+    icon: 'mynaui:user-hexagon',
+    active: true,
+  },
+  {
     id: 'task',
     subheader: 'Task',
     path: '#!',
     icon: 'hugeicons:book-open-01',
-  },
-  {
-    id: 'mentors',
-    subheader: 'Mentors',
-    path: '#!',
-    icon: 'mynaui:user-hexagon',
   },
   {
     id: 'messages',
