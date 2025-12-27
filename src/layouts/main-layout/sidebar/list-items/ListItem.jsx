@@ -6,6 +6,11 @@ import ListItemText from '@mui/material/ListItemText';
 import IconifyIcon from '@/components/base/IconifyIcon';
 
 const ListItem = ({ subheader, icon, path, active }) => {
+
+  const pathname = window.location.pathname.replace(/^\//, '');
+  
+  active = pathname === path || pathname.startsWith(path);
+  
   const [open, setOpen] = useState(false);
 
   const handleClick = () => {

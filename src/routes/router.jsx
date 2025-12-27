@@ -6,6 +6,11 @@ import AuthLayout from '@/layouts/auth-layout';
 import Splash from '@/components/loader/Splash';
 import PageLoader from '@/components/loader/PageLoader';
 import { Profile, Employees } from '../pages/employee';
+import { Projects} from '../pages/projects';
+import { Clients } from '../pages/clients';
+import { Teams } from '../pages/teams';
+import { Categories } from '../pages/categories';
+import { Technologies } from '../pages/technologies';
 
 const App = lazy(() => import('@/App'));
 const Dashboard = lazy(() => import('@/pages/dashboard'));
@@ -42,9 +47,34 @@ const router = createBrowserRouter(
               element: <Profile />,
             },
             {
-              path: 'employees',
+              path: paths.employees,
               index: true,
               element: <Employees />,
+            },
+            {
+              path: paths.projects,
+              index: true,
+              element: <Projects />,
+            },
+            {
+              path: paths.clients,
+              index: true,
+              element: <Clients />,
+            },
+            {
+              path: paths.teams,
+              index: true,
+              element: <Teams />,
+            },
+            {
+              path: paths.categories,
+              index: true,
+              element: <Categories />,
+            },
+            {
+              path: paths.technologies,
+              index: true,
+              element: <Technologies />,
             },
           ],
         },

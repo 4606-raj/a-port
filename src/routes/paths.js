@@ -3,12 +3,18 @@ export const rootPaths = {
   pageRoot: 'pages',
   authRoot: 'authentication',
   errorRoot: 'error',
-};
+  };
 
 export default {
   dashboard: `/${rootPaths.pageRoot}/dashboard`,
   task: `/${rootPaths.pageRoot}/task`,
   employees: `/${rootPaths.pageRoot}/employees`,
+  teams: `/${rootPaths.pageRoot}/teams`,
+  projects: `/${rootPaths.pageRoot}/projects`,
+  clients: `/${rootPaths.pageRoot}/clients`,
+  categories: `/${rootPaths.pageRoot}/categories`,
+  technologies: `/${rootPaths.pageRoot}/technologies`,
+
   messages: `/${rootPaths.pageRoot}/messages`,
   settings: `/${rootPaths.pageRoot}/settings`,
 
