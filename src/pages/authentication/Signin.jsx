@@ -11,10 +11,14 @@ import TextField from '@mui/material/TextField';
 import Checkbox from '@mui/material/Checkbox';
 import IconifyIcon from '@/components/base/IconifyIcon';
 import paths from '@/routes/paths';
+import { useDispatch } from 'react-redux';
+import { login } from '@/store/slices/auth.slice.js';
 
 const Signin = () => {
   const [user, setUser] = useState({ email: '', password: '' });
   const [showPassword, setShowPassword] = useState(false);
+
+    const dispatch = useDispatch();
 
   const handleInputChange = (e) => {
     setUser({ ...user, [e.target.name]: e.target.value });
@@ -23,6 +27,10 @@ const Signin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     console.log(user);
+
+    // Dispatch sign-in action
+    dispatch(login({ email: user.email, password: user.password, redirectTo: paths.dashboard.root }));
+    
   };
 
   return (
